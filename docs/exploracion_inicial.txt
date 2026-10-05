@@ -1,0 +1,160 @@
+== Columnas de fecha en SECOP II ==
+fecha_de_fin_del_contrato
+fecha_de_firma
+fecha_de_inicio_del_contrato
+fecha_de_notificaci_n_de_prorrogaci_n
+fecha_fin_liquidacion
+fecha_fin_obligaciones_posconsumo
+fecha_fin_reversi_n
+fecha_inicio_liquidacion
+fecha_inicio_obligaciones_posconsumo
+fecha_inicio_reversi_n
+
+== SECOP II: contratos firmados en 2020 ==
+{'n': '357251'}
+
+== SECOP II: contratos firmados en 2021 ==
+{'n': '561581'}
+
+== SECOP II: contratos firmados en 2022 ==
+{'n': '710565'}
+
+== SECOP II: contratos firmados en 2023 ==
+{'n': '843127'}
+
+== SECOP II: contratos firmados en 2024 ==
+{'n': '950729'}
+
+== SECOP II: contratos firmados en 2025 ==
+{'n': '1050953'}
+
+== SECOP II: contratos firmados en 2026 ==
+{'n': '895035'}
+
+== Estados de contrato (2025) ==
+{'estado_contrato': 'En ejecución', 'n': '394439'}
+{'estado_contrato': 'Cerrado', 'n': '255928'}
+{'estado_contrato': 'Modificado', 'n': '240784'}
+{'estado_contrato': 'terminado', 'n': '145201'}
+{'estado_contrato': 'Aprobado', 'n': '7542'}
+{'estado_contrato': 'cedido', 'n': '5268'}
+{'estado_contrato': 'Suspendido', 'n': '1783'}
+{'estado_contrato': 'Borrador', 'n': '6'}
+{'estado_contrato': 'Cancelado', 'n': '2'}
+
+== microsoft (2025): total y valor ==
+{'n': '282', 'valor': '133694199072.05'}
+
+== microsoft (2025): códigos UNSPSC más frecuentes ==
+{'codigo_de_categoria_principal': 'V1.80111600', 'n': '65'}
+{'codigo_de_categoria_principal': 'V1.81112501', 'n': '25'}
+{'codigo_de_categoria_principal': 'V1.81112200', 'n': '14'}
+{'codigo_de_categoria_principal': 'V1.81111800', 'n': '11'}
+{'codigo_de_categoria_principal': 'V1.43231512', 'n': '10'}
+{'codigo_de_categoria_principal': 'V1.43231500', 'n': '10'}
+{'codigo_de_categoria_principal': 'V1.81112500', 'n': '8'}
+{'codigo_de_categoria_principal': 'V1.81111508', 'n': '7'}
+{'codigo_de_categoria_principal': 'UNSPECIFIED', 'n': '7'}
+{'codigo_de_categoria_principal': 'V1.81111500', 'n': '7'}
+{'codigo_de_categoria_principal': 'V1.80111500', 'n': '5'}
+{'codigo_de_categoria_principal': 'V1.43231513', 'n': '5'}
+{'codigo_de_categoria_principal': 'V1.81112102', 'n': '5'}
+{'codigo_de_categoria_principal': 'V1.43233700', 'n': '4'}
+{'codigo_de_categoria_principal': 'V1.86101710', 'n': '4'}
+
+== oracle (2025): total y valor ==
+{'n': '222', 'valor': '114226749901.01'}
+
+== oracle (2025): códigos UNSPSC más frecuentes ==
+{'codigo_de_categoria_principal': 'V1.80111600', 'n': '32'}
+{'codigo_de_categoria_principal': 'V1.81112200', 'n': '30'}
+{'codigo_de_categoria_principal': 'V1.81112205', 'n': '15'}
+{'codigo_de_categoria_principal': 'V1.80111500', 'n': '15'}
+{'codigo_de_categoria_principal': 'V1.81111800', 'n': '11'}
+{'codigo_de_categoria_principal': 'V1.43232300', 'n': '10'}
+{'codigo_de_categoria_principal': 'V1.81112500', 'n': '6'}
+{'codigo_de_categoria_principal': 'V1.81111500', 'n': '6'}
+{'codigo_de_categoria_principal': 'V1.81111805', 'n': '6'}
+{'codigo_de_categoria_principal': 'V1.43231500', 'n': '5'}
+{'codigo_de_categoria_principal': 'UNSPECIFIED', 'n': '5'}
+{'codigo_de_categoria_principal': 'V1.81112501', 'n': '4'}
+{'codigo_de_categoria_principal': 'V1.81112209', 'n': '3'}
+{'codigo_de_categoria_principal': 'V1.81111600', 'n': '3'}
+{'codigo_de_categoria_principal': 'V1.81111508', 'n': '3'}
+
+== aws (2025): total y valor ==
+{'n': '12', 'valor': '790541453'}
+
+== aws (2025): códigos UNSPSC más frecuentes ==
+{'codigo_de_categoria_principal': 'V1.81111800', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81112500', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.80111600', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.80111701', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.81111805', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.81112202', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.81112502', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.43231602', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.86101810', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.80101500', 'n': '1'}
+
+== google (2025): total y valor ==
+{'n': '65', 'valor': '23403709216.06'}
+
+== google (2025): códigos UNSPSC más frecuentes ==
+{'codigo_de_categoria_principal': 'V1.43233501', 'n': '11'}
+{'codigo_de_categoria_principal': 'V1.81112102', 'n': '10'}
+{'codigo_de_categoria_principal': 'V1.80111600', 'n': '6'}
+{'codigo_de_categoria_principal': 'V1.81112501', 'n': '5'}
+{'codigo_de_categoria_principal': 'V1.81112100', 'n': '3'}
+{'codigo_de_categoria_principal': 'V1.81161600', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.43231512', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81111808', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81112105', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81112200', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.43231500', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81111800', 'n': '2'}
+{'codigo_de_categoria_principal': 'V1.81112222', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.81112500', 'n': '1'}
+{'codigo_de_categoria_principal': 'V1.81112502', 'n': '1'}
+
+== TVEC: acuerdos marco con más valor desde 2020 ==
+{'agregacion': 'No Definido', 'n': '87725', 'valor': '18063204927831'}
+{'agregacion': 'IAD Software', 'n': '3818', 'valor': '2681746093119'}
+{'agregacion': 'Vehículos III', 'n': '2347', 'valor': '1914998393045'}
+{'agregacion': 'Aseo y cafetería III', 'n': '3169', 'valor': '1727784893352'}
+{'agregacion': 'IAD Software por Catalogo II', 'n': '1242', 'valor': '1669485285701'}
+{'agregacion': 'Aseo y Cafetería IV', 'n': '2795', 'valor': '1654038998443'}
+{'agregacion': 'Aseo y Cafetería V', 'n': '1524', 'valor': '1183009410160'}
+{'agregacion': 'Servicios BPO II', 'n': '198', 'valor': '953347454276'}
+{'agregacion': 'Transporte Terrestres Especial de Pasajeros II', 'n': '938', 'valor': '746459206165'}
+{'agregacion': 'Material de Intendencia y Materia Prima', 'n': '489', 'valor': '591636378588'}
+{'agregacion': 'Motocicletas, Cuatrimotos y Motocarros II', 'n': '581', 'valor': '425367219901'}
+{'agregacion': 'Compra de ETP II', 'n': '1864', 'valor': '401518899565'}
+{'agregacion': 'Servicios de BPO III', 'n': '68', 'valor': '322916666559'}
+{'agregacion': 'Transporte Terrestre Automotor Especial de Pasajeros', 'n': '246', 'valor': '301189379637'}
+{'agregacion': 'Dotación Escolar II', 'n': '686', 'valor': '300036620494'}
+{'agregacion': 'Material de Intendencia II', 'n': '901', 'valor': '294440805291'}
+{'agregacion': 'Servicios Postales de Pago', 'n': '22', 'valor': '289918067642'}
+{'agregacion': 'Atención emergencia COVID-19', 'n': '219', 'valor': '282973403391'}
+{'agregacion': 'Dotaciones Escolares III', 'n': '368', 'valor': '273546648028'}
+{'agregacion': 'Mesa de Servicio', 'n': '136', 'valor': '189260390754'}
+{'agregacion': 'Nube Pública III', 'n': '290', 'valor': '167452473509'}
+{'agregacion': 'Conectividad III', 'n': '614', 'valor': '160872966513'}
+{'agregacion': 'Seguros de Vehículos II', 'n': '367', 'valor': '155475675310'}
+{'agregacion': 'Tiquetes Aéreos II', 'n': '386', 'valor': '150762138557'}
+{'agregacion': 'Servicios BPO', 'n': '80', 'valor': '140581445279'}
+{'agregacion': 'Seguro Obligatorio de Accidentes de Tránsito \x96 SOAT III', 'n': '815', 'valor': '139689396602'}
+{'agregacion': 'IAD Servicios Financieros II', 'n': '18', 'valor': '134587481269'}
+{'agregacion': 'Dotación de Vestuario de Calle III', 'n': '3725', 'valor': '119788233640'}
+{'agregacion': 'Material de Intendencia III', 'n': '221', 'valor': '109049381170'}
+{'agregacion': 'Consumibles de Impresión II', 'n': '2118', 'valor': '108300227191'}
+{'agregacion': 'Conectividad IV', 'n': '279', 'valor': '106734346303'}
+{'agregacion': 'Nube Privada IV', 'n': '89', 'valor': '85493943398'}
+{'agregacion': 'Medicamentos de Control Especial de Monopolio del Estado', 'n': '430', 'valor': '70580483329'}
+{'agregacion': 'APM Riesgo y Emergencias', 'n': '1338', 'valor': '70068674464'}
+{'agregacion': 'ETP III', 'n': '13', 'valor': '68833057715'}
+{'agregacion': 'Nube Privada III', 'n': '194', 'valor': '58469021397'}
+{'agregacion': 'Uniformes para Labor y Usos Varios', 'n': '845', 'valor': '49739941457'}
+{'agregacion': 'Enfermedad Renal Crónica', 'n': '30', 'valor': '49520404891'}
+{'agregacion': 'Productos y Servicios Microsoft II', 'n': '77', 'valor': '47856063695'}
+{'agregacion': 'Vehículos Blindados', 'n': '12', 'valor': '39220910772'}
