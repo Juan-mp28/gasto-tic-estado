@@ -1,0 +1,16 @@
+patron,fabricante
+\mMICROSOFT\M,microsoft
+\mAZURE\M,microsoft
+\mOFFICE 365\M,microsoft
+\mM365\M,microsoft
+\mWINDOWS\M,microsoft
+\mSQL SERVER\M,microsoft
+UNIFIED (ENTERPRISE )?SUPPORT,microsoft
+SOPORTE (EMPRESARIAL )?UNIFICADO,microsoft
+\mORACLE\M,oracle
+\mOCI\M,oracle
+\mAMAZON WEB SERVICES\M,aws
+\mAWS\M,aws
+\mGOOGLE\M,google
+\mGCP\M,google
+\mG SUITE\M,google

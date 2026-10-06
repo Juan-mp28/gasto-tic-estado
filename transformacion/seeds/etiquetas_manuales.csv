@@ -1,0 +1,61 @@
+fuente,id,fabricante_real,tipo_gasto_real,nota
+secop,CO1.PCCNTR.5800767,otros,fuera_de_alcance,valor atípico (620 billones); integración de software contable
+secop,CO1.PCCNTR.2784891,otros,fuera_de_alcance,"falso positivo de NUBE: cerro Las Nubes, estudios geológicos"
+secop,CO1.PCCNTR.8727404,otros,nube,créditos de nube pública sin fabricante nombrado
+secop,CO1.PCCNTR.8309548,otros,nube,"duda: mezcla centros de datos, colocation, licenciamiento y multi-nube"
+tvec,123244,otros,nube,npu04 Nube Pública con horas de expertos (R10)
+secop,CO1.PCCNTR.8238401,otros,fuera_de_alcance,solución de gestión documental que usa la nube; no es compra de nube
+tvec,165134,microsoft,licencia,
+secop,CO1.PCCNTR.7152380,microsoft,licencia,
+tvec,70283,otros,fuera_de_alcance,BPO / call center
+tvec,88079,otros,fuera_de_alcance,BPO / call center
+tvec,54375,microsoft,fuera_de_alcance,computadores con Windows incluido (R9)
+tvec,102650,otros,fuera_de_alcance,BPO / call center
+tvec,118404,otros,nube,npu04 Nube Pública con horas de expertos (R10)
+secop,CO1.PCCNTR.7704225,otros,nube,
+secop,CO1.PCCNTR.5682698,otros,fuera_de_alcance,duda: renovación de hardware y software del core bancario
+tvec,110384,microsoft,licencia,
+secop,CO1.PCCNTR.7186959,otros,nube,
+tvec,66460,microsoft,fuera_de_alcance,computadores con Windows incluido (R9)
+secop,CO1.PCCNTR.6459727,otros,fuera_de_alcance,solución de gestión documental que usa la nube; no es compra de nube
+secop,CO1.PCCNTR.6153556,otros,fuera_de_alcance,fábrica de software
+tvec,101875,otros,fuera_de_alcance,BPO / call center
+secop,CO1.PCCNTR.2688172,otros,fuera_de_alcance,"duda: solución integral de hardware, software y servicios"
+tvec,122531,otros,fuera_de_alcance,BPO / call center
+secop,CO1.PCCNTR.9291202,otros,nube,duda: SaaS que incluye implementación y operación
+secop,CO1.PCCNTR.8726127,microsoft,nube,
+tvec,122759,otros,licencia,suscripciones Fortinet
+tvec,126357,microsoft,licencia,
+secop,CO1.PCCNTR.6022430,otros,nube,duda: SaaS que incluye operación
+tvec,101210,microsoft,fuera_de_alcance,computadores con Windows incluido (R9)
+secop,CO1.PCCNTR.8436791,otros,fuera_de_alcance,soporte y construcción de software a la medida
+secop,CO1.PCCNTR.7679910,otros,fuera_de_alcance,instructor contratado
+secop,CO1.PCCNTR.8487716,otros,licencia,
+secop,CO1.PCCNTR.3501993,otros,nube,duda: SaaS que incluye gestión y mantenimiento
+secop,CO1.PCCNTR.7468737,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.5284564,otros,licencia,
+secop,CO1.PCCNTR.8102869,otros,licencia,suscripciones Adobe
+secop,CO1.PCCNTR.9190330,otros,licencia,duda: alquiler de software contable con asistencia técnica
+secop,CO1.PCCNTR.5453052,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.8049670,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.5480452,oracle,fuera_de_alcance,"soporte de un tercero sobre Oracle Linux, no del fabricante"
+secop,CO1.PCCNTR.3789977,otros,nube,
+secop,CO1.PCCNTR.4919998,otros,fuera_de_alcance,"duda: suscripción a bases de datos de contenido, no a software"
+secop,CO1.PCCNTR.4899849,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.2420043,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.8460724,otros,licencia,
+secop,CO1.PCCNTR.5690013,otros,fuera_de_alcance,fábrica de software
+secop,CO1.PCCNTR.9280374,otros,nube,
+secop,CO1.PCCNTR.7115711,otros,licencia,renovación software RPA
+secop,CO1.PCCNTR.3294143,otros,fuera_de_alcance,instructor contratado
+secop,CO1.PCCNTR.7545249,otros,nube,duda: apoyo a la gestión prestado como SaaS
+secop,CO1.PCCNTR.9713273,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.7824792,otros,nube,
+tvec,153006,microsoft,licencia,
+secop,CO1.PCCNTR.7388630,otros,fuera_de_alcance,menciona Microsoft pero es un instructor: trampa para la regla de texto
+secop,CO1.PCCNTR.7324012,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.3273630,otros,fuera_de_alcance,persona contratada
+secop,CO1.PCCNTR.1546634,oracle,licencia,proveedor es Oracle Colombia
+secop,CO1.PCCNTR.5112240,otros,fuera_de_alcance,duda: garantía de hardware Dell más software VMware
+secop,CO1.PCCNTR.4108627,otros,licencia,suscripción Red Hat
+secop,CO1.PCCNTR.2997109,otros,fuera_de_alcance,persona contratada

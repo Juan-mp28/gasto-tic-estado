@@ -15,3 +15,9 @@ models:
       +materialized: view
     marts:
       +materialized: table
+      
+seeds:
+  gasto_tic:
+    etiquetas_manuales:
+      +column_types:
+        id: text
