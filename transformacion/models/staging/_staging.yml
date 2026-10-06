@@ -1,0 +1,24 @@
+models:
+  - name: stg_secop_contratos
+    columns:
+      - name: id_contrato
+        data_tests: [unique, not_null]
+      - name: fecha_firma
+        data_tests: [not_null]
+      - name: valor
+        data_tests:
+          - not_null:
+              config:
+                severity: warn
+
+  - name: stg_tvec_ordenes
+    columns:
+      - name: id_orden
+        data_tests: [unique, not_null]
+      - name: fecha_orden
+        data_tests: [not_null]
+      - name: valor
+        data_tests:
+          - not_null:
+              config:
+                severity: warn

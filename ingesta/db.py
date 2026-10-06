@@ -4,7 +4,7 @@ import psycopg
 
 
 def conectar():
-    return psycopg.connect(os.environ["DATABASE_URL"], prepare_threshold=None)
+    return psycopg.connect(prepare_threshold=None)
 
 
 if __name__ == "__main__":

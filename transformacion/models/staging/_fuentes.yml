@@ -1,0 +1,12 @@
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: secop_contratos
+        columns:
+          - name: id_contrato
+            data_tests: [unique, not_null]
+      - name: tvec_ordenes
+        columns:
+          - name: identificador_de_la_orden
+            data_tests: [unique, not_null]
