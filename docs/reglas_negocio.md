@@ -8,12 +8,13 @@
 | R4 | Fabricante: `microsoft`, `oracle`, `aws`, `google`, `multi_fabricante`, `otros`. Se deriva del texto, no del contratista (que suele ser revendedor). | Cerrada |
 | R5 | Contratos con varios fabricantes se marcan `multi_fabricante`. No se prorratea el valor. | Cerrada |
 | R6 | Métrica: valor comprometido (`valor_del_contrato` en SECOP II, `total` en TVEC). Adiciones fuera por ahora. | Cerrada |
-| R7 | Se excluyen los estados `Borrador` y `Cancelado`. | Cerrada |
+| R7 | Se excluyen los estados `Borrador` y `Cancelado` (SECOP II). El equivalente para TVEC se decide al ver sus estados. | Cerrada (TVEC pendiente) |
 | R8 | `tipo_gasto`: `nube`, `licencia`, `soporte_fabricante`, `fuera_de_alcance`. La renovación de soporte y actualización de licencias (Oracle SULS, Microsoft Software Assurance) cuenta como `licencia`. El soporte técnico como servicio (Microsoft Unified Support) va en `soporte_fabricante`. | Cerrada |
-| R9 | Computadores con licencia incluida (TVEC `etc`/`etp`) se excluyen: es compra de hardware y el valor de la licencia no viene separado. | Cerrada |
+| R9 | Computadores con licencia incluida (TVEC `etc`/`etp`) se excluyen en dbt: es compra de hardware y el valor de la licencia no viene separado. | Cerrada |
 | R10 | Órdenes de Nube Pública que incluyen horas de expertos se cuentan completas como `nube`. No se prorratea. | Cerrada |
-| R11 | Filtro de ingesta SECOP II: objeto con términos de fabricante (MICROSOFT, AZURE, OFFICE 365, ORACLE, AMAZON WEB SERVICES, AWS, GOOGLE, GCP, UNIFIED) o NUBE, CLOUD, SOFTWARE; o bien LICENCI / SUSCRIPCI **solo** si el UNSPSC empieza por 43, 8111 u 8116. Lo que solo tiene UNSPSC de tecnología sin palabras clave no entra. | Cerrada (familias UNSPSC por confirmar) |
-| R12 | Filtro de ingesta TVEC: `agregacion` de software, nube o fabricante, o los mismos términos en `items`. | Pendiente |
+| R11 | Filtro de ingesta SECOP II: objeto con términos de fabricante (MICROSOFT, AZURE, OFFICE 365, ORACLE, AMAZON WEB SERVICES, AWS, GOOGLE, GCP, UNIFIED) o NUBE, CLOUD, SOFTWARE; o bien LICENCI / SUSCRIPCI **solo** si el UNSPSC empieza por 43, 8111 u 8116. Lo que solo tiene UNSPSC de tecnología sin palabras clave no entra. | Cerrada |
+| R12 | Filtro de ingesta TVEC: fecha desde 2020 y `agregacion` o `items` con términos de fabricante o NUBE, CLOUD, SOFTWARE. LICENCI / SUSCRIPCI no se usan (TVEC no tiene UNSPSC para controlar el ruido). | Cerrada |
+| R13 | Actualización: cada día se recargan los últimos 2 meses de ambas fuentes; cada semana, recarga completa desde 2020. Se ejecuta con GitHub Actions junto con dbt. | Cerrada |
 
 ## Limitaciones conocidas
 
@@ -22,6 +23,7 @@
 - Contratos con UNSPSC de tecnología pero sin palabras clave quedan fuera (mayormente outsourcing, según la muestra 2025).
 - Hay valores atípicos (la familia UNSPSC 8111 suma ~624 billones en 2024): se tratan con pruebas de calidad en dbt.
 - Posible doble conteo entre TVEC y SECOP II: por verificar.
+- Registros que desaparezcan de la fuente no se borran de la base (el upsert no elimina): por verificar si ocurre.
 
 ## Evidencia
 
