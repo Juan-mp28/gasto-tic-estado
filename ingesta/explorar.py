@@ -1,6 +1,6 @@
 import os
 import sys
-
+import time
 import requests
 
 BASE = "https://www.datos.gov.co"
@@ -30,11 +30,23 @@ def columnas(dataset):
     return sorted(c["fieldName"] for c in r.json()["columns"])
 
 
+REINTENTAR = {429, 500, 502, 503, 504}
+
+
 def soql(dataset, **params):
     params = {f"${k}": v for k, v in params.items()}
-    r = sesion.get(f"{BASE}/resource/{dataset}.json", params=params, timeout=300)
-    r.raise_for_status()
-    return r.json()
+    for intento in range(5):
+        if intento:
+            time.sleep(15 * intento)
+        try:
+            r = sesion.get(f"{BASE}/resource/{dataset}.json", params=params, timeout=300)
+        except requests.Timeout:
+            if intento == 4:
+                raise
+            continue
+        if r.status_code not in REINTENTAR or intento == 4:
+            r.raise_for_status()
+            return r.json()
 
 
 def entre(campo, anio):
