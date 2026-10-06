@@ -1,6 +1,6 @@
 {% macro normalizar(columna) %}
     trim(regexp_replace(
-        translate(upper({{ columna }}), 'ÁÉÍÓÚÜÑ', 'AEIOUUN'),
+        translate(upper(replace({{ columna }}, chr(150), '-')), 'ÁÉÍÓÚÜÑ', 'AEIOUUN'),
         '\s+', ' ', 'g'
     ))
 {% endmacro %}
