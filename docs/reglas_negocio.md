@@ -12,8 +12,8 @@
 | R8 | `tipo_gasto`: `nube`, `licencia`, `soporte_fabricante`, `fuera_de_alcance`. La renovación de soporte y actualización de licencias (Oracle SULS, Microsoft Software Assurance) cuenta como `licencia`. El soporte técnico como servicio (Microsoft Unified Support) va en `soporte_fabricante`. | Cerrada |
 | R9 | Computadores con licencia incluida (TVEC `etc`/`etp`) se excluyen: es compra de hardware y el valor de la licencia no viene separado. | Cerrada |
 | R10 | Órdenes de Nube Pública que incluyen horas de expertos se cuentan completas como `nube`. No se prorratea. | Cerrada |
-| R11 | Filtro de ingesta SECOP II: objeto con términos de fabricante (MICROSOFT, AZURE, OFFICE 365, ORACLE, AMAZON WEB SERVICES, AWS, GOOGLE, GCP, UNIFIED) o NUBE, CLOUD, SOFTWARE; o bien LICENCI / SUSCRIPCI **solo** si el UNSPSC empieza por 43, 8111 u 8116. Lo que solo tiene UNSPSC de tecnología sin palabras clave no entra. | Cerrada |
-| R12 | Filtro de ingesta TVEC: `agregacion` o `items` con términos de fabricante o NUBE, CLOUD, SOFTWARE. | Pendiente |
+| R11 | Filtro de ingesta SECOP II: objeto con términos de fabricante (MICROSOFT, AZURE, OFFICE 365, ORACLE, AMAZON WEB SERVICES, AWS, GOOGLE, GCP, UNIFIED) o NUBE, CLOUD, SOFTWARE; o bien LICENCI / SUSCRIPCI **solo** si el UNSPSC empieza por 43, 8111 u 8116. Lo que solo tiene UNSPSC de tecnología sin palabras clave no entra. | Cerrada (familias UNSPSC por confirmar) |
+| R12 | Filtro de ingesta TVEC: `agregacion` de software, nube o fabricante, o los mismos términos en `items`. | Pendiente |
 
 ## Limitaciones conocidas
 
