@@ -41,4 +41,6 @@ SECOP = Fuente(
 )
 
 if __name__ == "__main__":
-    ejecutar(SECOP, sys.argv[1], sys.argv[2])
+    con_problemas = ejecutar(SECOP, sys.argv[1], sys.argv[2])
+    if con_problemas:
+        sys.exit(f"secop: meses con problemas: {', '.join(con_problemas)}")

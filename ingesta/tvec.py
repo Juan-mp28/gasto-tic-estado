@@ -35,4 +35,6 @@ TVEC = Fuente(
 )
 
 if __name__ == "__main__":
-    ejecutar(TVEC, sys.argv[1], sys.argv[2])
+    con_problemas = ejecutar(TVEC, sys.argv[1], sys.argv[2])
+    if con_problemas:
+        sys.exit(f"tvec: meses con problemas: {', '.join(con_problemas)}")

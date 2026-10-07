@@ -58,6 +58,8 @@ def registrar(conn, carga, estado, detalle, filas=None):
 
 
 def ejecutar(fuente, desde, hasta):
+    con_problemas = []
+
     with conectar() as conn:
         for inicio, fin in meses(desde, hasta):
             mes = inicio[:7]
@@ -73,9 +75,14 @@ def ejecutar(fuente, desde, hasta):
                 conn.rollback()
                 registrar(conn, carga, "error", f"{mes}: {e}")
                 print(f"{fuente.nombre} {mes}  ERROR  {e}")
+                con_problemas.append(mes)
                 continue
 
             estado = "ok" if leidas == esperadas else "incompleta"
             detalle = f"{mes}: esperadas={esperadas} leidas={leidas} unicas={unicas}"
             registrar(conn, carga, estado, detalle, unicas)
             print(f"{fuente.nombre} {detalle}  {estado}")
+            if estado != "ok":
+                con_problemas.append(mes)
+
+    return con_problemas
