@@ -5,12 +5,12 @@ patron,fabricante,debil
 \mM365\M,microsoft,false
 \mWINDOWS\M,microsoft,true
 \mSQL SERVER\M,microsoft,false
-UNIFIED (ENTERPRISE )?SUPPORT,microsoft
-SOPORTE (EMPRESARIAL )?UNIFICADO,microsoft
-\mORACLE\M,oracle
-\mOCI\M,oracle
-\mAMAZON WEB SERVICES\M,aws
-\mAWS\M,aws
-\mGOOGLE\M,google
-\mGCP\M,google
-\mG SUITE\M,google
+UNIFIED (ENTERPRISE )?SUPPORT,microsoft,false
+SOPORTE (EMPRESARIAL )?UNIFICADO,microsoft,false
+\mORACLE\M,oracle,false
+\mOCI\M,oracle,false
+\mAMAZON WEB SERVICES\M,aws,false
+\mAWS\M,aws,false
+\mGOOGLE\M,google,false
+\mGCP\M,google,false
+\mG SUITE\M,google,false
