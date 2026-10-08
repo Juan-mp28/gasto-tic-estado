@@ -6,6 +6,13 @@ por_texto as (
     select r.fuente, r.id, t.fabricante
     from registros r
     join {{ ref('terminos_fabricante') }} t on r.texto_normalizado ~ t.patron
+    where not (
+        t.debil
+        and exists (
+            select 1 from {{ ref('otras_marcas') }} o
+            where r.texto_normalizado ~ o.patron
+        )
+    )
 ),
 
 por_proveedor as (
