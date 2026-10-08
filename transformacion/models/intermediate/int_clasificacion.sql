@@ -47,8 +47,9 @@ select
         else 'otros'
     end as fabricante,
     f.detectados as fabricantes_detectados,
-    coalesce(t.tipo_gasto, 'sin_clasificar') as tipo_gasto,
-    t.regla as regla_aplicada
+    coalesce(m.tipo_gasto, t.tipo_gasto, 'sin_clasificar') as tipo_gasto,
+    case when m.tipo_gasto is not null then 'correccion_manual' else t.regla end as regla_aplicada
 from registros r
 left join fabricantes f using (fuente, id)
 left join tipo t using (fuente, id)
+left join {{ ref('correcciones_manuales') }} m using (fuente, id)
