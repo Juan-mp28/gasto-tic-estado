@@ -19,10 +19,8 @@ models:
 seeds:
   gasto_tic:
     etiquetas_manuales:
-      +column_types:
-        id: text
-
-terminos_fabricante:
-  +column_types: {debil: boolean}
+      +column_types: {id: text}
+    terminos_fabricante:
+      +column_types: {debil: boolean}
     correcciones_manuales:
       +column_types: {id: text}
