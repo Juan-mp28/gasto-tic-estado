@@ -1,5 +1,5 @@
 prioridad,regla,tipo_gasto,patron
-1,computadores_tvec,fuera_de_alcance,\m(ETC|ETP)[0-9-]
+1,computadores_tvec,fuera_de_alcance,\m(ETC|ETP|ETA)[0-9-]|\mETP II\M
 1,implementacion_documental,fuera_de_alcance,IMPLEMENTACION.*(GESTION DOCUMENTAL|SGDEA)|(GESTION DOCUMENTAL|SGDEA).*IMPLEMENTACION
 1,bpo_tvec,fuera_de_alcance,\mBPO[0-9]
 1,personas,fuera_de_alcance,SERVICIOS (PROFESIONALES|PERSONALES|DE APOYO A LA GESTION)
