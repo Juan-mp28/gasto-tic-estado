@@ -1,10 +1,10 @@
-patron,fabricante
-\mMICROSOFT\M,microsoft
-\mAZURE\M,microsoft
-\mOFFICE 365\M,microsoft
-\mM365\M,microsoft
-\mWINDOWS\M,microsoft
-\mSQL SERVER\M,microsoft
+patron,fabricante,debil
+\mMICROSOFT\M,microsoft,false
+\mAZURE\M,microsoft,false
+\mOFFICE 365\M,microsoft,false
+\mM365\M,microsoft,false
+\mWINDOWS\M,microsoft,true
+\mSQL SERVER\M,microsoft,false
 UNIFIED (ENTERPRISE )?SUPPORT,microsoft
 SOPORTE (EMPRESARIAL )?UNIFICADO,microsoft
 \mORACLE\M,oracle
