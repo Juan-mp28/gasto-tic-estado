@@ -15,6 +15,8 @@ models:
       +materialized: view
     marts:
       +materialized: table
+      +grants:
+        select: ['lector_tablero']
       
 seeds:
   gasto_tic:
