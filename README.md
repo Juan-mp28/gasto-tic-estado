@@ -2,6 +2,8 @@
 
 > **English summary.** End-to-end data pipeline that measures how much Colombian public entities spend on cloud services and software licenses from Microsoft, Oracle, AWS and Google. It pulls contracts from SECOP II and the Colombian government marketplace (TVEC) through the Socrata API, loads them into PostgreSQL (Supabase), and transforms them with dbt. The hard part: most contracts are signed with resellers, not with the vendor, so the vendor is inferred from the contract text using rules stored as dbt seeds and evaluated against a hand-labeled sample. Runs daily on GitHub Actions at zero cost.
 
+**Documentación de los modelos y linaje:** https://juan-mp28.github.io/gasto-tic-estado/
+
 ¿Qué entidades del Estado gastan más en AWS, Microsoft, Oracle y Google? Los datos son públicos, pero no se pueden consultar así directamente: casi nunca se le contrata al fabricante, sino a un revendedor. En el SECOP aparece el nombre del distribuidor, no el de Microsoft u Oracle. Por eso el fabricante hay que sacarlo del texto del objeto del contrato.
 
 Este repositorio es el pipeline completo, desde la API pública hasta tablas listas para analizar, y se actualiza solo todos los días.
@@ -38,7 +40,7 @@ Costo: $0. El límite que más pesa es el de 500 MB de Supabase, y por eso se fi
 **Reglas en datos, no en código.** La clasificación vive en cinco seeds de dbt:
 
 - `terminos_fabricante.csv`: patrones de texto → fabricante. Algunos términos son débiles, como WINDOWS, y solo cuentan si el texto no nombra otra marca.
-- `otras_marcas.csv`: marcas de software que no son de los cuatro fabricantes (Fortinet, Esri, SAP...). Sirve para que "compatible con Windows" no convierta una licencia de Fortinet en Microsoft.
+- `otras_marcas.csv`: marcas de software que no son de los cuatro fabricantes (Fortinet, Veeam, VMware...). Sirve para que "compatible con Windows" no convierta una licencia de Fortinet en Microsoft.
 - `proveedores_fabricante.csv`: proveedores que son el propio fabricante, como Oracle Colombia o Branch of Microsoft.
 - `reglas_tipo_gasto.csv`: patrones → `nube`, `licencia`, `soporte_fabricante` o `fuera_de_alcance`, con prioridad.
 - `correcciones_manuales.csv`: casos puntuales que ninguna regla resuelve sin dañar otros. Cada uno lleva su motivo.
