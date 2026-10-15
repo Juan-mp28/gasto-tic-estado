@@ -35,11 +35,13 @@ Costo: $0. El límite que más pesa es el de 500 MB de Supabase, y por eso se fi
 
 **Carga verificable.** Cada mes se carga por separado. Se cuenta cuántos registros dice la API que hay, cuántos se leyeron y cuántos ids únicos llegaron, y si no coinciden la carga queda marcada como `incompleta` en `raw.cargas` y el workflow falla. El upsert permite repetir cualquier mes sin duplicar.
 
-**Reglas en datos, no en código.** La clasificación vive en tres seeds de dbt:
+**Reglas en datos, no en código.** La clasificación vive en cinco seeds de dbt:
 
-- `terminos_fabricante.csv`: patrones de texto → fabricante.
+- `terminos_fabricante.csv`: patrones de texto → fabricante. Algunos términos son débiles, como WINDOWS, y solo cuentan si el texto no nombra otra marca.
+- `otras_marcas.csv`: marcas de software que no son de los cuatro fabricantes (Fortinet, Esri, SAP...). Sirve para que "compatible con Windows" no convierta una licencia de Fortinet en Microsoft.
 - `proveedores_fabricante.csv`: proveedores que son el propio fabricante, como Oracle Colombia o Branch of Microsoft.
 - `reglas_tipo_gasto.csv`: patrones → `nube`, `licencia`, `soporte_fabricante` o `fuera_de_alcance`, con prioridad.
+- `correcciones_manuales.csv`: casos puntuales que ninguna regla resuelve sin dañar otros. Cada uno lleva su motivo.
 
 Cambiar una regla es editar un CSV y correr `dbt build`. Las reglas usan límites de palabra (`\mAWS\M`) para que "AWS" no aparezca dentro de otra palabra.
 
@@ -67,31 +69,36 @@ Pruebas: unicidad y no nulos en los ids de cada fuente, fecha obligatoria, y una
 
 Se etiquetaron a mano 60 registros (los 30 de mayor valor y 30 al azar) y se compararon con lo que asignan las reglas:
 
-| Medida | Acierto |
-|---|---|
-| Tipo de gasto | 78 % |
-| Fabricante, en registros dentro del alcance | 96 % |
+| Medida                                      | Acierto |
+| ------------------------------------------- | ------- |
+| Tipo de gasto                               | 83 %    |
+| Fabricante, en registros dentro del alcance | 100 %   |
 
-La primera versión daba 72 % en tipo de gasto. Al revisar los errores apareció que "UNIFIED" no solo nombra el soporte de Microsoft, sino también licencias M365. Al corregir esa regla, el acierto subió a 78 %.
+Cómo se llegó ahí:
 
-Una aclaración honesta: la muestra la etiquetó la misma persona que escribió las reglas, así que la medición no es del todo independiente.
+- La primera versión daba 72 % en tipo de gasto. "UNIFIED" no solo nombra el soporte de Microsoft, también aparece en licencias M365. Corregir esa regla lo subió a 78 %.
+- Después, al analizar los datos, aparecieron errores que la muestra no había detectado. Unas licencias de Fortinet que decían "Windows VM" quedaban como Microsoft. Una tercerización de centros de datos de Colpensiones (unos 223 mil millones) quedaba como licencia porque el texto decía "licenciamiento". Y 36 órdenes de computadores se colaban como licencias. Corregido eso, quedó en 83 %.
+
+El 100 % de fabricante sale de pocos registros: significa que en la muestra no queda ningún error, no que la clasificación sea perfecta. Además, la muestra la etiquetó la misma persona que escribió las reglas, así que la medición no es del todo independiente.
 
 ## Primeros resultados
 
-Corte de octubre de 2026, con 21.614 contratos y órdenes de nube y licencias:
+Corte del 15 de octubre de 2026, con 21.619 contratos y órdenes de nube y licencias por 10,72 billones de pesos:
 
-| Fabricante | Registros | Valor (billones COP) |
-|---|---|---|
-| Otros / no identificado | 17.487 | 7,19 |
-| Microsoft | 3.092 | 3,03 |
-| Oracle | 346 | 0,24 |
-| Google | 587 | 0,19 |
-| Varios fabricantes | 51 | 0,04 |
-| AWS | 51 | 0,02 |
+| Fabricante              | Registros | Valor (billones COP) | % del valor |
+| ----------------------- | --------- | -------------------- | ----------- |
+| Otros / no identificado | 17.547    | 7,25                 | 67,7 %      |
+| Microsoft               | 3.037     | 2,97                 | 27,7 %      |
+| Oracle                  | 346       | 0,24                 | 2,2 %       |
+| Google                  | 587       | 0,19                 | 1,8 %       |
+| Varios fabricantes      | 51        | 0,04                 | 0,4 %       |
+| AWS                     | 51        | 0,02                 | 0,1 %       |
 
-Microsoft domina: aparece en 14 de las 15 combinaciones entidad × fabricante de mayor valor. La mayor es el Consejo Superior de la Judicatura, con unos 356 mil millones.
+Entre los cuatro fabricantes, Microsoft domina: de las 15 combinaciones entidad × fabricante de mayor valor, 14 son Microsoft. La mayor es el Consejo Superior de la Judicatura, con unos 356 mil millones. La única que no es Microsoft es Oracle en la Fiscalía.
 
-Cuidado al leer la tabla. "Otros" pesa 67 % del valor, y ahí hay gasto real de nube que el contrato no atribuye a ningún fabricante. El bajo valor de AWS puede ser real o puede ser efecto de esto; todavía no está verificado.
+Casi todo Microsoft llega por la Tienda Virtual, a través de pocos revendedores. Oracle, en cambio, vende sobre todo directo.
+
+Cómo leer "otros". Revisándolo, la mayor parte no son los cuatro grandes escondidos. Son licencias de otras marcas (backup, Esri, IBM, SAP, Fortinet, antivirus...), nube privada y SaaS de terceros. El candidato más claro a fabricante oculto son unas 340 órdenes del Acuerdo Marco de Nube Pública que no dicen de quién es la nube, por unos 640 mil millones. Por eso el valor bajo de AWS todavía no se puede dar por real.
 
 ## Limitaciones
 
