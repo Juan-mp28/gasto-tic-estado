@@ -57,4 +57,30 @@ jobs:
         if: ${{ !cancelled() }}
         working-directory: transformacion
         run: dbt build --profiles-dir .
+
+      - name: Documentación dbt
+        working-directory: transformacion
+        run: |
+          dbt docs generate --profiles-dir .
+          mkdir -p ../sitio_docs
+          cp target/index.html target/manifest.json target/catalog.json ../sitio_docs/
+
+      - name: Subir sitio de documentación
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio_docs
+          
+  publicar_docs:
+    needs: cargar
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: despliegue
+        uses: actions/deploy-pages@v4
       
