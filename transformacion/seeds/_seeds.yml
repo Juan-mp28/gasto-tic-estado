@@ -1,0 +1,27 @@
+seeds:
+  - name: terminos_fabricante
+    description: >
+      Patrones de texto que identifican a cada fabricante. Los términos débiles
+      (hoy solo WINDOWS) no cuentan si el texto nombra otra marca de otras_marcas.
+
+  - name: otras_marcas
+    description: >
+      Marcas de software que no son de los cuatro fabricantes. Existe para que
+      "compatible con Windows" no convierta, por ejemplo, una licencia Fortinet
+      en Microsoft.
+
+  - name: proveedores_fabricante
+    description: Proveedores que son el propio fabricante, como Oracle Colombia o Branch of Microsoft Colombia.
+
+  - name: reglas_tipo_gasto
+    description: >
+      Patrones que asignan el tipo de gasto. Si varias reglas coinciden, gana la
+      de menor número de prioridad.
+
+  - name: correcciones_manuales
+    description: >
+      Casos puntuales que ninguna regla general resuelve sin dañar otros
+      registros (R16). Cada uno lleva su motivo y prevalece sobre las reglas.
+
+  - name: etiquetas_manuales
+    description: Muestra de 60 registros clasificados a mano para medir el acierto de las reglas.

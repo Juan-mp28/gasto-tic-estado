@@ -1,0 +1,35 @@
+models:
+  - name: int_registros
+    description: >
+      Las dos fuentes en una sola tabla con las mismas columnas. En TVEC el
+      texto es la agregación más los ítems; en SECOP II, el objeto del contrato.
+    columns:
+      - name: fuente
+        description: "secop o tvec."
+      - name: id
+        description: Identificador del registro dentro de su fuente. La llave es fuente + id.
+      - name: proveedor
+        description: Quien firmó el contrato. Casi siempre es un revendedor, no el fabricante.
+      - name: excluido_por_estado
+        description: Verdadero si el contrato está en Borrador o Cancelado (SECOP II) o Cancelado (TVEC). No suma al gasto, pero se conserva (R7).
+      - name: texto
+        description: Texto original que describe la compra.
+      - name: texto_normalizado
+        description: El mismo texto normalizado; sobre él corren las reglas.
+
+  - name: int_clasificacion
+    description: >
+      Aquí se decide el fabricante y el tipo de gasto de cada registro con las
+      reglas de los seeds. El fabricante sale del texto o de un proveedor que
+      sea el propio fabricante; si aparecen varios queda multi_fabricante. El
+      tipo de gasto lo da la regla de menor prioridad que coincida, salvo que
+      exista una corrección manual.
+    columns:
+      - name: fabricante
+        description: "microsoft, oracle, aws, google, multi_fabricante u otros (R4, R5)."
+      - name: fabricantes_detectados
+        description: Lista de fabricantes que encontraron las reglas, útil para revisar los multi_fabricante.
+      - name: tipo_gasto
+        description: "nube, licencia, soporte_fabricante, fuera_de_alcance o sin_clasificar (R8)."
+      - name: regla_aplicada
+        description: Nombre de la regla que definió el tipo de gasto, o correccion_manual.

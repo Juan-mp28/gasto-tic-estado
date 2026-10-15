@@ -1,23 +1,44 @@
 models:
   - name: stg_secop_contratos
+    description: >
+      Contratos de SECOP II con tipos limpios: fechas como date, valor como
+      número y el objeto del contrato normalizado (mayúsculas, sin tildes ni
+      espacios dobles) para poder buscar patrones.
     columns:
       - name: id_contrato
+        description: Identificador del contrato.
         data_tests: [unique, not_null]
+      - name: codigo_unspsc
+        description: Código UNSPSC de la categoría principal, sin el prefijo "V1.". Nulo si la fuente dice UNSPECIFIED.
+      - name: objeto_normalizado
+        description: Objeto del contrato normalizado; es el texto contra el que corren las reglas.
       - name: fecha_firma
+        description: Fecha de firma. Es la fecha que define el periodo (R2).
         data_tests: [not_null]
       - name: valor
+        description: Valor del contrato en pesos. Nulo si el texto de la fuente no es un número.
         data_tests:
           - not_null:
               config:
                 severity: warn
 
   - name: stg_tvec_ordenes
+    description: >
+      Órdenes de la Tienda Virtual con tipos limpios. La agregación (el acuerdo
+      marco) y los ítems quedan también normalizados para las reglas.
     columns:
       - name: id_orden
+        description: Identificador de la orden.
         data_tests: [unique, not_null]
+      - name: agregacion
+        description: Acuerdo marco o instrumento de agregación. Nulo cuando la fuente dice "No Definido".
+      - name: items
+        description: Descripción de los productos de la orden.
       - name: fecha_orden
+        description: Fecha de la orden. Es la fecha que define el periodo (R2).
         data_tests: [not_null]
       - name: valor
+        description: Total de la orden en pesos.
         data_tests:
           - not_null:
               config:

@@ -1,12 +1,20 @@
 sources:
   - name: raw
     schema: raw
+    description: >
+      Datos tal como llegan de la API de datos.gov.co, todo en texto. Los carga
+      la ingesta en Python con upsert, mes a mes, y solo trae los registros que
+      pasan el filtro de palabras clave (reglas R11 y R12).
     tables:
       - name: secop_contratos
+        description: Contratos electrónicos de SECOP II (dataset jbjy-vk9h) desde 2020.
         columns:
           - name: id_contrato
+            description: Identificador del contrato en SECOP II.
             data_tests: [unique, not_null]
       - name: tvec_ordenes
+        description: Órdenes de compra de la Tienda Virtual del Estado Colombiano (dataset rgxm-mmea) desde 2020.
         columns:
           - name: identificador_de_la_orden
+            description: Identificador de la orden en la Tienda Virtual.
             data_tests: [unique, not_null]

@@ -1,0 +1,15 @@
+models:
+  - name: evaluacion_muestra
+    description: >
+      Compara lo que asignan las reglas con 60 registros etiquetados a mano
+      (los 30 de mayor valor y 30 al azar). De aquí sale el porcentaje de
+      acierto que aparece en el README.
+    columns:
+      - name: acierta_tipo
+        description: Verdadero si la regla y la etiqueta coinciden en el tipo de gasto.
+      - name: acierta_fabricante
+        description: Verdadero si coinciden en el fabricante.
+      - name: en_alcance
+        description: Verdadero si la etiqueta no es fuera_de_alcance. El acierto de fabricante se mide solo sobre estos.
+      - name: nota
+        description: Comentario de quien etiquetó el registro.

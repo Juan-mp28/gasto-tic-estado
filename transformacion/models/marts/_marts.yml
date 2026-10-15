@@ -1,0 +1,60 @@
+models:
+  - name: fct_gasto_tic
+    description: >
+      Tabla principal del análisis: una fila por contrato u orden de nube o
+      licencias que no esté cancelada. Es la que responde cuánto gasta cada
+      entidad y con qué fabricante.
+    columns:
+      - name: fuente
+        description: "secop o tvec."
+      - name: id
+        description: Identificador del registro dentro de su fuente.
+      - name: nombre_entidad
+        description: Entidad compradora, con el nombre que publica la fuente (R15).
+      - name: nit_entidad
+        description: NIT de la entidad compradora.
+      - name: proveedor
+        description: Contratista que firmó. Suele ser un revendedor.
+      - name: fecha
+        description: Fecha de firma (SECOP II) o de la orden (TVEC).
+      - name: anio
+        description: Año de la fecha.
+      - name: fabricante
+        description: "Fabricante deducido del texto: microsoft, oracle, aws, google, multi_fabricante u otros."
+      - name: tipo_gasto
+        description: "nube o licencia."
+      - name: valor
+        description: Valor comprometido en pesos colombianos, sin adiciones (R6).
+      - name: regla_aplicada
+        description: Regla que clasificó el registro, para poder auditar cada caso.
+      - name: texto
+        description: Texto original del contrato u orden.
+      - name: url_proceso
+        description: Enlace al proceso en SECOP II. Vacío en TVEC.
+
+  - name: mart_gasto_entidad_fabricante
+    description: Gasto por entidad, fabricante y año, separado en nube y licencias.
+    columns:
+      - name: entidad
+        description: Nombre de la entidad normalizado.
+      - name: contratos
+        description: Número de contratos u órdenes.
+      - name: valor_total
+        description: Suma del valor comprometido en pesos.
+      - name: valor_nube
+        description: Parte del valor clasificada como nube.
+      - name: valor_licencia
+        description: Parte del valor clasificada como licencia.
+
+  - name: mart_cancelaciones
+    description: >
+      Cuántos contratos de nube y licencias de cada entidad quedaron
+      cancelados o en borrador. Sale de int_clasificacion porque fct_gasto_tic
+      ya los excluye.
+    columns:
+      - name: registros
+        description: Total de contratos u órdenes en alcance, cancelados o no.
+      - name: excluidos
+        description: Los que no suman al gasto por su estado.
+      - name: pct_excluidos
+        description: Porcentaje de excluidos.
