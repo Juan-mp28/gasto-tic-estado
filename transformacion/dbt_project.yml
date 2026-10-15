@@ -24,3 +24,8 @@ seeds:
       +column_types: {debil: boolean}
     correcciones_manuales:
       +column_types: {id: text}
+
+marts:
+  +materialized: table
+    +grants:
+      select: ['lector_tablero']
