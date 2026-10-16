@@ -17,7 +17,7 @@ models:
       +materialized: table
       +grants:
         select: ['lector_tablero']
-      
+
 seeds:
   gasto_tic:
     etiquetas_manuales:
@@ -26,8 +26,3 @@ seeds:
       +column_types: {debil: boolean}
     correcciones_manuales:
       +column_types: {id: text}
-
-  marts:
-    +materialized: table
-    +grants:
-      select: ['lector_tablero']
