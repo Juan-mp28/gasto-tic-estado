@@ -2,6 +2,7 @@
 
 > **English summary.** End-to-end data pipeline that measures how much Colombian public entities spend on cloud services and software licenses from Microsoft, Oracle, AWS and Google. It pulls contracts from SECOP II and the Colombian government marketplace (TVEC) through the Socrata API, loads them into PostgreSQL (Supabase), and transforms them with dbt. The hard part: most contracts are signed with resellers, not with the vendor, so the vendor is inferred from the contract text using rules stored as dbt seeds and evaluated against a hand-labeled sample. Runs daily on GitHub Actions at zero cost.
 
+**Tablero:** [Data Studio](https://datastudio.google.com/reporting/146f3041-cc1e-42aa-91e3-83ae746bedf8)
 **Documentación de los modelos y linaje:** https://juan-mp28.github.io/gasto-tic-estado/
 
 ¿Qué entidades del Estado gastan más en AWS, Microsoft, Oracle y Google? Los datos son públicos, pero no se pueden consultar así directamente: casi nunca se le contrata al fabricante, sino a un revendedor. En el SECOP aparece el nombre del distribuidor, no el de Microsoft u Oracle. Por eso el fabricante hay que sacarlo del texto del objeto del contrato.
