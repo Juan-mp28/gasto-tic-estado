@@ -6,6 +6,11 @@
 
 ¿Qué entidades del Estado gastan más en AWS, Microsoft, Oracle y Google? Los datos son públicos, pero no se pueden consultar así directamente: casi nunca se le contrata al fabricante, sino a un revendedor. En el SECOP aparece el nombre del distribuidor, no el de Microsoft u Oracle. Por eso el fabricante hay que sacarlo del texto del objeto del contrato.
 
+## Tablero
+
+[Ver el tablero en Data Studio]([PEGA_AQUI_EL_ENLACE](https://datastudio.google.com/reporting/146f3041-cc1e-42aa-91e3-83ae746bedf8))
+
+Valor comprometido por año, fabricante, entidad y proveedor, con filtros por año, fabricante, tipo de gasto y fuente. Se actualiza a diario con el pipeline.
 Este repositorio es el pipeline completo, desde la API pública hasta tablas listas para analizar, y se actualiza solo todos los días.
 
 ## Arquitectura
