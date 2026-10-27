@@ -97,7 +97,7 @@ jobs:
           dias=$(( ( $(date +%s) - ultimo ) / 86400 ))
           echo "Último commit hace $dias días"
 
-          if [ "$dias" -lt 0 ]; then
+          if [ "$dias" -lt 45 ]; then
             exit 0
           fi
 
